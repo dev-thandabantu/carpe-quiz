@@ -29,7 +29,7 @@ Carpe-Quiz
 ## Setup Instructions
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/dev-thandabantu/carpe-quiz.git
    ```
 2. Navigate to the project directory:
    ```
