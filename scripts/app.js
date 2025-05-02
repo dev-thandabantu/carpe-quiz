@@ -1,13 +1,16 @@
-const screens = document.querySelectorAll("section");
-const progressSteps = document.querySelectorAll(".progress-step");
+
 const nextButton = document.getElementById("next-button");
 const backButton = document.getElementById("back-button");
-let currentScreen = 1;
 let selectedProductType = null;
-const brandLogos = document.querySelectorAll("[data-brand]");
-const continueButton = document.getElementById("continue-button");
 const selectedBrandDisplay = document.getElementById("selected-brand-display");
 const selectedBrandName = document.getElementById("selected-brand-name");
+const screens = document.querySelectorAll("section");
+const progressSteps = document.querySelectorAll(".progress-step");
+const nextButtons = document.querySelectorAll("#next-button");
+const backButtons = document.querySelectorAll("#back-button");
+const continueButton = document.getElementById("continue-button");
+const brandLogos = document.querySelectorAll("[data-brand]");
+let currentScreen = 1;
 let selectedBrand = null;
 
 // Function to show the correct screen
@@ -31,13 +34,6 @@ function showScreen(screenNumber) {
     });
 
     currentScreen = screenNumber;
-
-    // Update button visibility
-    if (currentScreen === 1) {
-        continueButton.classList.remove("hidden");
-    } else {
-        continueButton.classList.add("hidden");
-    }
 }
 
 // Handle brand selection
@@ -70,18 +66,22 @@ document.querySelectorAll("input[name='product-type']").forEach(input => {
     });
 });
 
-// Next button click event
-nextButton?.addEventListener("click", () => {
-    if (currentScreen < screens.length) {
-        showScreen(currentScreen + 1);
-    }
+// Handle "Next" button click for all screens
+nextButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        if (currentScreen < screens.length) {
+            showScreen(currentScreen + 1);
+        }
+    });
 });
 
-// Back button click event
-backButton?.addEventListener("click", () => {
-    if (currentScreen > 1) {
-        showScreen(currentScreen - 1);
-    }
+// Handle "Back" button click for all screens
+backButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        if (currentScreen > 1) {
+            showScreen(currentScreen - 1);
+        }
+    });
 });
 
 // Progress bar click event
