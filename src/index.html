@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpe Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-white font-sans flex flex-col items-center justify-center overflow-y-auto">
+
+    <!-- Header and Logo -->
+    <header class="text-center mb-4">
+        <h1
+            class="text-white font-bold text-lg bg-gradient-to-r from-orange-500 to-yellow-500 py-2 px-4 rounded-md mt-6">
+            &lt;1 Minute Sweatcare Quiz
+        </h1>
+        <img src="../assets/images/carpe-logo.png" alt="Carpe Logo" class="h-10 mx-auto mt-2" />
+    </header>
+
+    <!-- Card -->
+    <div class="bg-white max-w-sm w-full rounded-lg shadow-lg overflow-hidden">
+        <!-- Progress Bar -->
+        <div class="bg-gradient-to-b from-blue-300 to-white p-4">
+            <div class="relative flex items-center justify-between">
+                <!-- Orange line behind -->
+                <div class="absolute top-1/2 left-0 right-0 h-1 bg-orange-500 z-0 transform -translate-y-1/2"></div>
+
+                <!-- Steps 1 to 6 -->
+                <div class="flex gap-4 items-center z-10">
+                    <div data-screen="1"
+                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-orange-500 text-white flex items-center justify-center text-sm cursor-pointer">
+                        1
+                    </div>
+                    <div data-screen="2"
+                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer">
+                        2
+                    </div>
+                    <div data-screen="3"
+                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer">
+                        3
+                    </div>
+                    <div data-screen="4"
+                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer">
+                        4
+                    </div>
+                    <div data-screen="5"
+                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer">
+                        5
+                    </div>
+                    <div data-screen="6"
+                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer">
+                        6
+                    </div>
+                </div>
+
+                <!-- Final Gift Icon -->
+                <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+                    <img src="../assets/images/toxic-warning-sign.png" alt="Gift Icon" class="w-8 h-8" />
+                </div>
+            </div>
+
+            <!-- Screens -->
+            <div id="screens">
+                <!-- Screen 1 -->
+                <section id="screen-1" class="p-6 active">
+                    <h2 class="font-bold text-xl text-gray-800">Which deodorant or antiperspirant brand do you currently
+                        use?</h2>
+                    <p class="text-gray-600 mt-2">Select your favorite</p>
+                    <div class="grid grid-cols-2 gap-4 mt-4">
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                            data-brand="Dove">
+                            <img src="../assets/images/dove.png" alt="Dove" class="w-[100px] h-[50px] mx-auto" />
+                        </div>
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                            data-brand="Old Spice">
+                            <img src="../assets/images/old-spice.png" alt="Old Spice"
+                                class="w-[100px] h-[50px] mx-auto" />
+                        </div>
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                            data-brand="Secret">
+                            <img src="../assets/images/secret.png" alt="Secret" class="w-[100px] h-[50px] mx-auto" />
+                        </div>
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                            data-brand="Degree">
+                            <img src="../assets/images/degree.png" alt="Degree" class="w-[100px] h-[50px] mx-auto" />
+                        </div>
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                            data-brand="Native">
+                            <img src="../assets/images/native.webp" alt="Native" class="w-[100px] h-[50px] mx-auto" />
+                        </div>
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                            data-brand="Axe">
+                            <img src="../assets/images/axe.jpeg" alt="Axe" class="w-[100px] h-[50px] mx-auto" />
+                        </div>
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                            data-brand="Lume">
+                            <img src="../assets/images/lume.png" alt="Lume" class="w-[100px] h-[50px] mx-auto" />
+                        </div>
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                            data-brand="Other">
+                            <img src="../assets/images/other.png" alt="Other" class="w-[100px] h-[50px] mx-auto" />
+                        </div>
+                    </div>
+
+                    <!-- Selected Brand Display -->
+                    <div id="selected-brand-display" class="mt-4 text-center text-gray-800 font-bold hidden">
+                        Selected Brand: <span id="selected-brand-name"></span>
+                    </div>
+
+                    <div class="mt-6">
+                        <button id="continue-button" class="bg-blue-600 text-white py-2 px-6 rounded-lg w-full"
+                            disabled>
+                            Continue
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Screen 2 -->
+                <section id="screen-2" class="p-6 hidden">
+                    <h2 class="font-bold text-xl text-gray-800">What deodorant or antiperspirant products do you
+                        currently use?</h2>
+                    <p class="text-gray-600 mt-2">Select all that apply</p>
+                    <div class="grid grid-cols-1 gap-4 mt-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Invisible Solid Stick" />
+                            <span>Invisible Solid Stick</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Invisible Cream" />
+                            <span>Invisible Cream <em>(Whole Body)</em></span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Dry Spray" />
+                            <span>Dry Spray</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Clear Gel" />
+                            <span>Clear Gel</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Clear Solid" />
+                            <span>Clear Solid <em>(Aluminum-Free)</em></span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Soft Solid" />
+                            <span>Soft Solid</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Original Solid Stick" />
+                            <span>Original Solid Stick</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Roll-On" />
+                            <span>Roll-On</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="product-type" value="Other" />
+                            <span>Other</span>
+                        </label>
+                    </div>
+                    <div class="flex justify-between mt-6">
+                        <button id="back-button" class="bg-blue-600 text-white py-2 px-6 rounded-lg">Back</button>
+                        <button id="next-button" class="bg-blue-600 text-white py-2 px-6 rounded-lg">Next</button>
+                    </div>
+                </section>
+
+                <!-- Screen 3 -->
+                <section id="screen-3" class="p-6 hidden">
+                    <!-- Top Line -->
+                    <h2 class="text-gray-600 text-lg">Have you ever wondered...</h2>
+
+                    <!-- Bold / Emphasized Line -->
+                    <h3 class="font-bold text-2xl mt-2">
+                        What are you <span class="uppercase">Really</span> putting on your body?
+                    </h3>
+
+                    <!-- Info Card -->
+                    <div class="border-2 border-red-500 rounded-lg mt-6">
+                        <!-- Header -->
+                        <div class="bg-red-500 text-white font-bold p-3 rounded-t-lg">
+                            Many deodorants and antiperspirants use harsh chemicals:
+                        </div>
+
+                        <!-- Bullet List -->
+                        <ul class="p-4 space-y-4">
+                            <li class="flex items-center gap-2">
+                                <img src="../assets/images/icons/burning-icon.png" alt="Burning Icon" class="w-9 h-9" />
+                                <span class="font-bold text-red-500">Cause burning, irritation and rashes</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img src="../assets/images/icons/sweat.png" alt="Sweat Icon" class="w-9 h-9" />
+                                <span class="font-bold text-red-500">Mask odor without stopping sweat</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img src="../assets/images/icons/sticky-icon.jpg" alt="Sticky Icon" class="w-9 h-9" />
+                                <span class="font-bold text-red-500">Leave lingering sticky residue</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Closing Text -->
+                    <p class="text-gray-600 p-4">
+                        <span class="font-bold">But don’t worry, we have a solution.</span> <br> see if it’s right for
+                        you.
+                    </p>
+
+                    <!-- Buttons -->
+                    <div class="flex justify-between mt-6">
+                        <button id="back-button"
+                            class="bg-blue-600 text-white py-2 px-6 rounded-lg flex items-center gap-2">
+                            <img src="../assets/icons/back-icon.png" alt="Back Icon" class="w-4 h-4" />
+                            Back
+                        </button>
+                        <button id="next-button"
+                            class="bg-blue-600 text-white py-2 px-6 rounded-lg flex items-center gap-2">
+                            Next
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Screen 4 -->
+                <section id="screen-4" class="p-6 hidden">
+                    <!-- Question -->
+                    <h2 class="font-bold text-xl text-gray-800">
+                        Would you swap your current deodorant or antiperspirant for a
+                        <span class="underline">more effective solution</span>?
+                    </h2>
+
+                    <!-- Options -->
+                    <div class="grid grid-cols-1 gap-4 mt-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="switch-option" value="Yes" />
+                            <img src="../assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6" />
+                            <span>Yes</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="switch-option" value="No" />
+                            <img src="../assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6" />
+                            <span>No, I don’t want a more effective sweat care</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="switch-option" value="Not Sure" />
+                            <img src="../assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-6 h-6" />
+                            <span>I’m not sure yet</span>
+                        </label>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex justify-between mt-6">
+                        <button id="back-button"
+                            class="bg-blue-600 text-white py-2 px-6 rounded-lg flex items-center gap-2">
+                            <img src="../assets/icons/back-icon.png" alt="Back Icon" class="w-4 h-4" />
+                            Back
+                        </button>
+                        <button id="next-button"
+                            class="bg-blue-600 text-white py-2 px-6 rounded-lg flex items-center gap-2">
+                            Next
+                            <img src="../assets/icons/next-icon.png" alt="Next Icon" class="w-4 h-4" />
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Screen 5 -->
+                <section id="screen-5" class="p-6 hidden">
+                    <!-- Question -->
+                    <h2 class="font-bold text-xl text-gray-800">
+                        Do you want premium fragrances with smarter sweat protection?
+                    </h2>
+
+                    <!-- Options -->
+                    <div class="grid grid-cols-1 gap-4 mt-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="fragrance-preference" value="Yes" />
+                            <img src="../assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6" />
+                            <span>Yes</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="fragrance-preference" value="No" />
+                            <img src="../assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6" />
+                            <span>No, I prefer cheap-smelling drugstore deodorant</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="fragrance-preference" value="Not Sure" />
+                            <img src="../assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-6 h-6" />
+                            <span>I’m not sure</span>
+                        </label>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex justify-between mt-6">
+                        <button id="back-button"
+                            class="bg-blue-600 text-white py-2 px-6 rounded-lg flex items-center gap-2">
+                            <img src="../assets/icons/back-icon.png" alt="Back Icon" class="w-4 h-4" />
+                            Back
+                        </button>
+                        <button id="next-button"
+                            class="bg-blue-600 text-white py-2 px-6 rounded-lg flex items-center gap-2">
+                            Next
+                            <img src="../assets/icons/next-icon.png" alt="Next Icon" class="w-4 h-4" />
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Screen 6 -->
+                <section id="screen-6" class="p-6 hidden">
+                    <!-- Question -->
+                    <h2 class="font-bold text-xl text-gray-800">
+                        Never run out of antiperspirant again! Are you ready to receive a regular delivery of your
+                        favorite scents?
+                    </h2>
+
+                    <!-- Subtext -->
+                    <p class="text-gray-600 text-sm mt-2 italic">
+                        (No more late-night dash to the store)
+                    </p>
+
+                    <!-- Options -->
+                    <div class="grid grid-cols-1 gap-4 mt-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="subscription-interest" value="Yes" />
+                            <img src="../assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6" />
+                            <span>Yes</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="subscription-interest" value="No" />
+                            <img src="../assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6" />
+                            <span>No, I like running out of my essentials</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="subscription-interest" value="Not Sure" />
+                            <img src="../assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-6 h-6" />
+                            <span>Still not sure</span>
+                        </label>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="mt-6">
+                        <button id="continue-button" class="bg-blue-600 text-white py-2 px-6 rounded-lg w-full"
+                            disabled>
+                            Continue
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Screen 7 -->
+                <section id="screen-7" class="p-6 hidden">
+                    <!-- Row 1: Logo -->
+                    <div class="text-center mb-4">
+                        <img src="../assets/images/carpe-logo.png" alt="Carpe Logo" class="h-10 mx-auto" />
+                    </div>
+
+                    <!-- Row 2: Confirmation Banner -->
+                    <div class="bg-orange-500 text-white text-center font-bold text-lg py-2">
+                        CONGRATULATIONS
+                    </div>
+
+                    <!-- Row 3: Main Message -->
+                    <div class="text-center mt-6">
+                        <h2 class="font-bold text-2xl text-gray-800">WE WILL REFUND YOU!</h2>
+                        <p class="text-gray-600 text-lg mt-2">FOR YOUR INEFFECTIVE DEODORANT</p>
+                    </div>
+
+                    <!-- Row 4: Savings Card -->
+                    <div class="relative mt-6">
+                        <div class="bg-orange-500 h-1 w-full"></div>
+                        <div class="bg-white border-dotted border-2 border-blue-500 text-center py-4 px-6">
+                            <p class="text-gray-600 text-sm">YOU HAVE SAVED</p>
+                            <h2 class="font-bold text-3xl text-gray-800">$15</h2>
+                            <p class="text-gray-600 text-sm">TOWARDS SMARTER SWEAT CARE</p>
+                        </div>
+                        <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2">
+                            <button class="bg-blue-600 text-white text-sm py-2 px-4 rounded-full">
+                                APPLY COUPON
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Row 5: Product Image -->
+                    <div class="text-center">
+                        <img src="../assets/images/carpe-products.jpeg" alt="Carpe Products" class="w-107 mx-auto" />
+                    </div>
+
+                    <!-- Row 6: Social Proof Bar -->
+                    <div class="bg-blue-600 text-white text-center py-4">
+                        <div class="flex flex-col items-center">
+                            <!-- People and Armpits Protected -->
+                            <div class="flex items-center gap-2">
+                                <img src="../assets/images/people.png" alt="Person Picture"
+                                    class="w-8 h-8 rounded-full" />
+                                <p class="text-sm">3,750,000+ armpits protected</p>
+                            </div>
+
+                            <!-- Rating and Additional Info -->
+                            <div class="flex justify-center items-center gap-4 mt-2">
+                                <span class="text-sm">★★★★★</span>
+                                <span class="text-sm">⌚ Fast, Free</span>
+                                <span>|</span>
+                                <span class="text-sm">🔐 Secure Checkout</span>
+                                <span>|</span>
+                                <span class="text-sm">😀 Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 7: Feature Icons -->
+                    <div class="grid grid-cols-3 gap-4 mt-6">
+                        <div class="p-4">
+                            <img src="../assets/images/icons/recommended.png" alt="recommended" class="mx-auto" />
+                        </div>
+                        <div class="p-4">
+                            <img src="../assets/images/icons/gentle.png" alt="Fast Delivery" class="mx-auto" />
+                        </div>
+                        <div class="p-4">
+                            <img src="../assets/images/icons/money-back.png" alt="Fast Delivery" class="mx-auto" />
+                        </div>
+                    </div>
+
+                    <!-- Row 8: Continue Button -->
+                    <div class="mt-6">
+                        <button id="continue-button" class="bg-blue-600 text-white py-2 px-6 rounded-lg w-full">
+                            CONTINUE
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="./scripts/app.js"></script>
+</body>
+
+</html>
