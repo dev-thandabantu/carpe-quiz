@@ -19,7 +19,7 @@
             </h1>
         </div>
         <div class="text-center mt-2">
-            <img src="./assets/images/carpe-logo.png" alt="Carpe Logo" class="h-10 mx-auto my-3" />
+            <img src="./assets/images/carpe-logo.png" alt="Carpe Logo" class="h-10 mx-auto my-3" loading="lazy" />
         </div>
     </header>
 
@@ -131,59 +131,48 @@
 
                 <!-- Screen 2 -->
                 <section id="screen-2" class="p-6 hidden">
-                    <h2 class="font-bold text-xl text-gray-800">What deodorant or antiperspirant products do you
+                    <h2 class="font-bold text-xl text-gray-800 text-center">What deodorant or antiperspirant products do you
                         currently use?</h2>
-                    <p class="text-gray-600 mt-2">Select all that apply</p>
                     <div class="grid grid-cols-1 gap-4 mt-4">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Invisible Solid Stick" />
-                            <span>Invisible Solid Stick</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Invisible Cream" />
-                            <span>Invisible Cream <em>(Whole Body)</em></span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Dry Spray" />
-                            <span>Dry Spray</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Clear Gel" />
-                            <span>Clear Gel</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Clear Solid" />
-                            <span>Clear Solid <em>(Aluminum-Free)</em></span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Soft Solid" />
-                            <span>Soft Solid</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Original Solid Stick" />
-                            <span>Original Solid Stick</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Roll-On" />
-                            <span>Roll-On</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="product-type" value="Other" />
-                            <span>Other</span>
-                        </label>
+                        <!-- Invisible Solid Stick -->
+                        <div class="flex items-center gap-4 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Invisible Solid Stick" class="accent-blue-600" />
+                            <img src="./assets/images/products/invisible-solid.png" alt="Invisible Solid Stick" class="w-12 h-12 object-contain" />
+                            <div>
+                                <div class="font-bold">Invisible Solid Stick</div>
+                                <!-- Optional subtext -->
+                            </div>
+                        </div>
+                        <!-- Example Card: Invisible Cream -->
+                        <div class="flex items-center gap-4 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Invisible Cream" class="accent-blue-600" />
+                            <img src="./assets/images/products/invisible-solid.png" alt="Invisible Cream" class="w-12 h-12 object-contain" />
+                            <div>
+                                <div class="font-bold">Invisible Cream</div>
+                                <div class="italic text-gray-500 text-sm">(Whole Body)</div>
+                            </div>
+                        </div>
+                        <!-- Example Card: Dry Spray -->
+                        <div class="flex items-center gap-4 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Dry Spray" class="accent-blue-600" />
+                            <img src="./assets/images/products/invisible-solid.png" alt="Dry Spray" class="w-12 h-12 object-contain" />
+                            <div>
+                                <div class="font-bold">Dry Spray</div>
+                            </div>
+                        </div>
+                        <!-- Repeat for other product types, adding images and subtext as needed -->
                     </div>
-                    <div class="flex justify-between mt-6">
+                    <div class="flex items-center gap-2 mt-6">
                         <!-- Back Button -->
                         <button id="back-button"
-                            class="bg-blue-600 text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                            class="bg-[#07508b] text-white px-4 h-10 rounded-lg flex items-center justify-center">
                             <img src="./assets/images/back-forwad.svg" alt="Back Icon" class="w-4 h-4" />
                         </button>
-
                         <!-- Next Button -->
                         <button id="next-button"
-                            class="bg-blue-600 text-white py-2 px-6 rounded-lg flex items-center gap-2">
+                            class="bg-[#169bd9] text-white py-2 w-full rounded-lg font-bold tracking-widest text-2xl flex items-center justify-center gap-2">
                             NEXT
-                            <img src="./assets/images/arrow-forward.svg" alt="Next Icon" class="w-4 h-4" />
+                            <img src="./assets/images/arrow-forward.svg" alt="Next Icon" class="w-5 h-5 ml-32" />
                         </button>
                     </div>
                 </section>
@@ -191,41 +180,41 @@
                 <!-- Screen 3 -->
                 <section id="screen-3" class="p-6 hidden">
                     <!-- Top Line -->
-                    <h2 class="text-gray-600 text-lg">Have you ever wondered..</h2>
+                    <h2 class="text-gray-600 text-lg text-center">Have you ever wondered..</h2>
 
                     <!-- Bold / Emphasized Line -->
-                    <h3 class="font-bold text-2xl mt-2">
+                    <h3 class="font-bold text-2xl mt-2 text-center">
                         What are you <span class="uppercase">Really</span> putting on your body?
                     </h3>
 
                     <!-- Info Card -->
-                    <div class="border-2 border-red-500 rounded-lg mt-6">
+                    <div class="border-2 border-[#b21726] mt-6 bg-white">
                         <!-- Header -->
-                        <div class="bg-red-500 text-white font-bold p-3 rounded-t-lg">
+                        <div class="bg-[#b21726] text-white font-bold p-3 text-center">
                             Many deodorants and antiperspirants use harsh chemicals:
                         </div>
 
                         <!-- Bullet List -->
                         <ul class="p-4 space-y-4">
-                            <li class="flex items-center gap-2">
-                                <img src="./assets/images/icons/burning-icon.png" alt="Burning Icon" class="w-9 h-9" />
-                                <span class="font-bold text-red-500">Cause burning, irritation and rashes</span>
+                            <li class="flex items-center gap-2 text-xl">
+                                <img src="./assets/images/icons/burning-icon.png" alt="Burning Icon" class="w-24 h-24" />
+                                <span class="font-bold text-[#b21726]">Cause burning, irritation and rashes</span>
                             </li>
-                            <li class="flex items-center gap-2">
-                                <img src="./assets/images/icons/sweat.png" alt="Sweat Icon" class="w-9 h-9" />
-                                <span class="font-bold text-red-500">Mask odor without stopping sweat</span>
+                            <li class="flex items-center gap-2 text-xl">
+                                <img src="./assets/images/icons/sweat.png" alt="Sweat Icon" class="w-24 h-24" />
+                                <span class="font-bold text-[#b21726]">Mask odor without stopping sweat</span>
                             </li>
-                            <li class="flex items-center gap-2">
-                                <img src="./assets/images/icons/sticky-icon.jpg" alt="Sticky Icon" class="w-9 h-9" />
-                                <span class="font-bold text-red-500">Leave lingering sticky residue</span>
+                            <li class="flex items-center gap-2 text-xl">
+                                <img src="./assets/images/icons/sticky-icon.png" alt="Sticky Icon" class="w-24 h-24" />
+                                <span class="font-bold text-[#b21726]">Leave lingering, sticky residue</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Closing Text -->
-                    <p class="text-gray-600 p-4">
-                        <span class="font-bold">But don’t worry, we have a solution.</span> <br> see if it’s right for
-                        you.
+                    <p class="text-gray-600 py-4 text-center">
+                        <span class="font-bold text-lg">But don’t worry, we have a solution.</span> <br> <span>if it’s right for
+                        you.</span>
                     </p>
 
                     <div class="flex justify-between mt-6">
@@ -247,28 +236,34 @@
                 <!-- Screen 4 -->
                 <section id="screen-4" class="p-6 hidden">
                     <!-- Question -->
-                    <h2 class="font-bold text-xl text-gray-800">
+                    <h2 class="font-bold text-xl text-gray-800 text-center">
                         Would you swap your current deodorant or antiperspirant for a
                         <span class="underline">more effective solution</span>?
                     </h2>
 
                     <!-- Options -->
                     <div class="grid grid-cols-1 gap-4 mt-4">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="switch-option" value="Yes" />
-                            <img src="./assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6" />
-                            <span>Yes</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="switch-option" value="No" />
-                            <img src="./assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6" />
-                            <span>No, I don’t want a more effective sweat care</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="switch-option" value="Not Sure" />
-                            <img src="./assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-6 h-6" />
-                            <span>I’m not sure yet</span>
-                        </label>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Yes" class="accent-blue-600" />
+                            <img src="./assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6 object-contain" />
+                            <div>
+                                <div class="">YES!</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="switch-option" value="No" class="accent-blue-600" />
+                            <img src="./assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6 object-contain" />
+                            <div>
+                                <div class="">No, I don’t want a more effective sweat care</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Not Sure" class="accent-blue-600" />
+                            <img src="./assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-10 h-10 object-contain" />
+                            <div>
+                                <div class="">I’m not sure yet</div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Buttons -->
@@ -291,27 +286,33 @@
                 <!-- Screen 5 -->
                 <section id="screen-5" class="p-6 hidden">
                     <!-- Question -->
-                    <h2 class="font-bold text-xl text-gray-800">
+                    <h2 class="font-bold text-xl text-gray-800 text-center">
                         Do you want premium fragrances with smarter sweat protection?
                     </h2>
 
                     <!-- Options -->
                     <div class="grid grid-cols-1 gap-4 mt-4">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="fragrance-preference" value="Yes" />
-                            <img src="./assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6" />
-                            <span>Yes</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="fragrance-preference" value="No" />
-                            <img src="./assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6" />
-                            <span>No, I prefer cheap-smelling drugstore deodorant</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="fragrance-preference" value="Not Sure" />
-                            <img src="./assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-6 h-6" />
-                            <span>I’m not sure</span>
-                        </label>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Yes" class="accent-blue-600" />
+                            <img src="./assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6 object-contain" />
+                            <div>
+                                <div class="">Yes</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="switch-option" value="No" class="accent-blue-600" />
+                            <img src="./assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6 object-contain" />
+                            <div>
+                                <div class="">No, I prefer cheap-smelling drugstore deo</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Not Sure" class="accent-blue-600" />
+                            <img src="./assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-10 h-10 object-contain" />
+                            <div>
+                                <div class="">I’m not sure</div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Buttons -->
@@ -334,33 +335,39 @@
                 <!-- Screen 6 -->
                 <section id="screen-6" class="p-6 hidden">
                     <!-- Question -->
-                    <h2 class="font-bold text-xl text-gray-800">
+                    <h2 class="font-bold text-xl text-gray-800 text-center">
                         Never run out of antiperspirant again! Are you ready to receive a regular delivery of your
                         favorite scents?
                     </h2>
 
                     <!-- Subtext -->
-                    <p class="text-gray-600 text-sm mt-2 italic">
+                    <p class="text-gray-600 text-sm mt-2 text-center">
                         (No more late-night dash to the store)
                     </p>
 
                     <!-- Options -->
                     <div class="grid grid-cols-1 gap-4 mt-4">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="subscription-interest" value="Yes" />
-                            <img src="./assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6" />
-                            <span>Yes</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="subscription-interest" value="No" />
-                            <img src="./assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6" />
-                            <span>No, I like running out of my essentials</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="subscription-interest" value="Not Sure" />
-                            <img src="./assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-6 h-6" />
-                            <span>Still not sure</span>
-                        </label>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Yes" class="accent-blue-600" />
+                            <img src="./assets/images/icons/green-check.png" alt="Green Check Icon" class="w-6 h-6 object-contain" />
+                            <div>
+                                <div class="">Yes</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="switch-option" value="No" class="accent-blue-600" />
+                            <img src="./assets/images/icons/red-x.png" alt="Red X Icon" class="w-6 h-6 object-contain" />
+                            <div>
+                                <div class="">No, I like running out of my essentials</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 border-2 border-gray-200 rounded-lg p-4 bg-white">
+                            <input type="radio" name="product-type" value="Not Sure" class="accent-blue-600" />
+                            <img src="./assets/images/icons/unsure-icon.png" alt="Unsure Icon" class="w-10 h-10 object-contain" />
+                            <div>
+                                <div class="">Still not sure</div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Buttons -->
