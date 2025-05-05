@@ -32,7 +32,6 @@ function showScreen(screenNumber) {
         }
     });
 
-    // Hide header only on screen 7
     const header = document.getElementById('main-header');
     if (header) {
         if (screenNumber === 7) {
@@ -42,7 +41,6 @@ function showScreen(screenNumber) {
         }
     }
 
-    // Hide progress bar only on screen 7
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) {
         if (screenNumber === 7) {
@@ -55,7 +53,6 @@ function showScreen(screenNumber) {
     currentScreen = screenNumber;
 }
 
-// Handle brand selection
 brandLogos.forEach(logo => {
     logo.addEventListener("click", () => {
         brandLogos.forEach(logo => logo.classList.remove("border-orange-500"));
@@ -66,18 +63,16 @@ brandLogos.forEach(logo => {
     });
 });
 
-// Handle "Continue" button click
 continueButton.addEventListener("click", () => {
     if (!selectedBrand) {
-        alert("Please select a brand before continuing."); // Show alert if no brand is selected
+        alert("Please select a brand before continuing.");
         return;
     }
 
     console.log("Proceeding with brand:", selectedBrand);
-    showScreen(2); // Navigate to Screen 2
+    showScreen(2);
 });
 
-// Handle product type selection
 document.querySelectorAll("input[name='product-type']").forEach(input => {
     input.addEventListener("change", (e) => {
         selectedProductType = e.target.value;
@@ -85,7 +80,6 @@ document.querySelectorAll("input[name='product-type']").forEach(input => {
     });
 });
 
-// Handle "Next" button click for all screens
 nextButtons.forEach(button => {
     button.addEventListener("click", () => {
         if (currentScreen < screens.length) {
@@ -94,7 +88,6 @@ nextButtons.forEach(button => {
     });
 });
 
-// Handle "Back" button click for all screens
 backButtons.forEach(button => {
     button.addEventListener("click", () => {
         if (currentScreen > 1) {
@@ -103,7 +96,7 @@ backButtons.forEach(button => {
     });
 });
 
-// Progress bar click event
+
 progressSteps.forEach(step => {
     step.addEventListener("click", () => {
         const screenNumber = parseInt(step.getAttribute("data-screen"));
@@ -111,16 +104,14 @@ progressSteps.forEach(step => {
     });
 });
 
-// Handle gift icon click
+
 document.querySelector("[alt='Gift Icon']").addEventListener("click", () => {
-    showScreen(7); // Navigate to Screen 7
+    showScreen(7); 
 });
 
-// Handle "Continue" button click on screen 7
 document.getElementById('back-to-start-button').addEventListener('click', function () {
-    // Hide screen 7
+
     document.getElementById('screen-7').classList.add('hidden');
 
-    // Show screen 1
     document.getElementById('screen-1').classList.remove('hidden');
 });
