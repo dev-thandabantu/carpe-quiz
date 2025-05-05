@@ -20,8 +20,8 @@
         <img src="./assets/images/carpe-logo.png" alt="Carpe Logo" class="h-10 mx-auto mt-2" />
     </header>
 
-    <!-- Card -->
-    <div class="bg-white max-w-sm w-full rounded-lg shadow-lg overflow-hidden">
+    <!-- Main Content -->
+    <main class="bg-white max-w-sm w-full rounded-lg shadow-lg overflow-hidden">
         <!-- Progress Bar -->
         <div class="bg-gradient-to-b from-blue-300 to-white p-4">
             <div class="relative flex items-center justify-between">
@@ -29,38 +29,38 @@
                 <div class="absolute top-1/2 left-0 right-0 h-1 bg-orange-500 z-0 transform -translate-y-1/2"></div>
 
                 <!-- Steps 1 to 6 -->
-                <div class="flex gap-4 items-center z-10">
-                    <div data-screen="1"
+                <ol class="flex gap-4 items-center z-10">
+                    <li data-screen="1"
                         class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-orange-500 text-white flex items-center justify-center text-sm cursor-pointer"
                         aria-label="Step 1">
                         1
-                    </div>
-                    <div data-screen="2"
+                    </li>
+                    <li data-screen="2"
                         class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
                         aria-label="Step 2">
                         2
-                    </div>
-                    <div data-screen="3"
+                    </li>
+                    <li data-screen="3"
                         class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
                         aria-label="Step 3">
                         3
-                    </div>
-                    <div data-screen="4"
+                    </li>
+                    <li data-screen="4"
                         class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
                         aria-label="Step 4">
                         4
-                    </div>
-                    <div data-screen="5"
+                    </li>
+                    <li data-screen="5"
                         class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
                         aria-label="Step 5">
                         5
-                    </div>
-                    <div data-screen="6"
+                    </li>
+                    <li data-screen="6"
                         class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
                         aria-label="Step 6">
                         6
-                    </div>
-                </div>
+                    </li>
+                </ol>
 
                 <!-- Final Gift Icon -->
                 <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
@@ -374,8 +374,8 @@
                             <img src="./assets/images/arrow-forward.svg" alt="Next Icon" class="w-4 h-4" />
                         </button>
                     </div>
+                </section>
             </div>
-            </section>
 
             <!-- Screen 7 -->
             <section id="screen-7" class="p-6 hidden">
@@ -457,7 +457,7 @@
                 </div>
             </section>
         </div>
-    </div>
+    </main>
 
     <script src="./scripts/app.js"></script>
 </body>
