@@ -12,102 +12,106 @@
 <body class="bg-white font-sans flex flex-col items-center justify-center overflow-y-auto">
 
     <!-- Header and Logo -->
-    <header class="text-center mb-4">
-        <h1
-            class="text-white font-bold text-lg bg-gradient-to-r from-orange-500 to-yellow-500 py-2 px-4 rounded-md mt-6">
-            &lt;1 Minute Sweatcare Quiz
-        </h1>
-        <img src="./assets/images/carpe-logo.png" alt="Carpe Logo" class="h-10 mx-auto mt-2" />
+    <header class="w-full md:max-w-md">
+        <div class="text-center bg-gradient-to-r from-yellow-500 to-orange-500 py-2 w-full">
+            <h1 class="text-white font-bold text-lg">
+                &lt;1 Minute Sweatcare Quiz
+            </h1>
+        </div>
+        <div class="text-center mt-2">
+            <img src="./assets/images/carpe-logo.png" alt="Carpe Logo" class="h-10 mx-auto my-3" />
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="bg-white max-w-sm w-full rounded-lg shadow-lg overflow-hidden">
+    <main class="bg-white w-full md:max-w-md overflow-hidden">
         <!-- Progress Bar -->
-        <div class="bg-gradient-to-b from-blue-300 to-white p-4">
-            <div class="relative flex items-center justify-between">
-                <!-- Orange line behind -->
-                <div class="absolute top-1/2 left-0 right-0 h-1 bg-orange-500 z-0 transform -translate-y-1/2"></div>
-
-                <!-- Steps 1 to 6 -->
-                <ol class="flex gap-4 items-center z-10">
-                    <li data-screen="1"
-                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-orange-500 text-white flex items-center justify-center text-sm cursor-pointer"
-                        aria-label="Step 1">
-                        1
-                    </li>
-                    <li data-screen="2"
-                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
-                        aria-label="Step 2">
-                        2
-                    </li>
-                    <li data-screen="3"
-                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
-                        aria-label="Step 3">
-                        3
-                    </li>
-                    <li data-screen="4"
-                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
-                        aria-label="Step 4">
-                        4
-                    </li>
-                    <li data-screen="5"
-                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
-                        aria-label="Step 5">
-                        5
-                    </li>
-                    <li data-screen="6"
-                        class="progress-step w-8 h-8 rounded-full border-2 border-orange-500 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer"
-                        aria-label="Step 6">
-                        6
-                    </li>
-                </ol>
-
-                <!-- Final Gift Icon -->
-                <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
-                    <img src="./assets/images/toxic-warning-sign.png" alt="Gift Icon" class="w-8 h-8" />
+        <div class="bg-gradient-to-b from-[#a1cce3] to-white p-4">
+            <div class="relative max-w-sm mt-2 mb-4 mx-12">
+                <!-- Orange line behind everything -->
+                <div class="absolute top-1/2 left-2 right-2 h-1 bg-orange-600 z-0 transform -translate-y-1/2"></div>
+                <div class="flex items-center justify-between relative z-10">
+                    <!-- Static Dot -->
+                    <div class="w-4 h-4 bg-orange-600 rounded-full"></div>
+                    <!-- Steps 1 to 6 -->
+                    <ol class="flex flex-1 justify-between mx-2">
+                        <li data-screen="1"
+                            class="progress-step w-6 h-6 rounded-full border-2 border-orange-600 bg-orange-500 text-white flex items-center justify-center text-sm cursor-pointer font-bold"
+                            aria-label="Step 1">
+                            1
+                        </li>
+                        <li data-screen="2"
+                            class="progress-step w-6 h-6 rounded-full border-2 border-orange-600 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer font-bold"
+                            aria-label="Step 2">
+                            2
+                        </li>
+                        <li data-screen="3"
+                            class="progress-step w-6 h-6 rounded-full border-2 border-orange-600 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer font-bold"
+                            aria-label="Step 3">
+                            3
+                        </li>
+                        <li data-screen="4"
+                            class="progress-step w-6 h-6 rounded-full border-2 border-orange-600 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer font-bold"
+                            aria-label="Step 4">
+                            4
+                        </li>
+                        <li data-screen="5"
+                            class="progress-step w-6 h-6 rounded-full border-2 border-orange-600 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer font-bold"
+                            aria-label="Step 5">
+                            5
+                        </li>
+                        <li data-screen="6"
+                            class="progress-step w-6 h-6 rounded-full border-2 border-orange-600 bg-white text-orange-500 flex items-center justify-center text-sm cursor-pointer font-bold"
+                            aria-label="Step 6">
+                            6
+                        </li>
+                    </ol>
+                    <!-- Gift Icon -->
+                    <div class="w-8 h-8 flex-shrink-0">
+                        <img src="./assets/images/toxic-warning-sign.png" alt="Gift Icon" class="w-full h-full" />
+                    </div>
                 </div>
             </div>
 
             <!-- Screens -->
             <div id="screens">
                 <!-- Screen 1 -->
-                <section id="screen-1" class="p-6 active">
+                <section id="screen-1" class="p-6 active text-center">
                     <h2 class="font-bold text-xl text-gray-800">Which deodorant or antiperspirant brand do you currently
                         use?</h2>
-                    <p class="text-gray-600 mt-2">Select your favorite</p>
+                    <p class="my-3">(select your favorite)</p>
                     <div class="grid grid-cols-2 gap-4 mt-4">
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
                             data-brand="Dove">
-                            <img src="./assets/images/dove.png" alt="Dove" class="w-[100px] h-[50px] mx-auto" />
+                            <img src="./assets/images/dove.png" alt="Dove" class="w-[100px] h-[50px] mx-auto my-3" />
                         </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
                             data-brand="Old Spice">
-                            <img src="./assets/images/old-spice.png" alt="Old Spice"
-                                class="w-[100px] h-[50px] mx-auto" />
+                            <img src="./assets/images/old-spice.png" alt="Old Spice" class="w-[100px] h-[50px] mx-auto my-3" />
                         </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
                             data-brand="Secret">
-                            <img src="./assets/images/secret.png" alt="Secret" class="w-[100px] h-[50px] mx-auto" />
+                            <img src="./assets/images/secret.png" alt="Secret" class="w-[100px] h-[50px] mx-auto my-3" />
                         </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
                             data-brand="Degree">
-                            <img src="./assets/images/degree.png" alt="Degree" class="w-[100px] h-[50px] mx-auto" />
+                            <img src="./assets/images/degree.png" alt="Degree" class="w-[100px] h-[50px] mx-auto my-3" />
                         </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
                             data-brand="Native">
-                            <img src="./assets/images/native.webp" alt="Native" class="w-[100px] h-[50px] mx-auto" />
+                            <img src="./assets/images/native.webp" alt="Native" class="w-[100px] h-[50px] mx-auto my-3" />
                         </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
                             data-brand="Axe">
-                            <img src="./assets/images/axe.jpeg" alt="Axe" class="w-[100px] h-[50px] mx-auto" />
+                            <img src="./assets/images/axe.jpeg" alt="Axe" class="w-[100px] h-[50px] mx-auto my-3" />
                         </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
                             data-brand="Lume">
-                            <img src="./assets/images/lume.png" alt="Lume" class="w-[100px] h-[50px] mx-auto" />
+                            <img src="./assets/images/lume.png" alt="Lume" class="w-[100px] h-[50px] mx-auto my-3" />
                         </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-gray-300"
+                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
                             data-brand="Other">
-                            <img src="./assets/images/other.png" alt="Other" class="w-[100px] h-[50px] mx-auto" />
+                            <img src="./assets/images/other.png" alt="Other" class="w-[100px] h-[50px] mx-auto my-3" />
                         </div>
                     </div>
 
@@ -117,10 +121,10 @@
                     </div>
 
                     <div class="mt-6">
-                        <button id="continue-button" class="bg-blue-600 text-white py-2 px-6 rounded-lg w-full"
+                        <button id="continue-button" class="bg-[#169bd9] text-white py-2 px-6 rounded-lg font-bold tracking-widest text-2xl"
                             disabled>
-                            Continue <img src="./assets/images/arrow-forward.svg" alt="Next Icon"
-                                class="w-4 h-4 inline" />
+                            CONTINUE <img src="./assets/images/arrow-forward.svg" alt="Next Icon"
+                                class="w-4 h-4 inline ml-4"/>
                         </button>
                     </div>
                 </section>
