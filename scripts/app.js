@@ -1,4 +1,3 @@
-
 const nextButton = document.getElementById("next-button");
 const backButton = document.getElementById("back-button");
 let selectedProductType = null;
@@ -32,6 +31,26 @@ function showScreen(screenNumber) {
             step.classList.remove("bg-orange-500", "text-white");
         }
     });
+
+    // Hide header only on screen 7
+    const header = document.getElementById('main-header');
+    if (header) {
+        if (screenNumber === 7) {
+            header.style.display = 'none';
+        } else {
+            header.style.display = '';
+        }
+    }
+
+    // Hide progress bar only on screen 7
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        if (screenNumber === 7) {
+            progressBar.style.display = 'none';
+        } else {
+            progressBar.style.display = '';
+        }
+    }
 
     currentScreen = screenNumber;
 }
@@ -97,25 +116,11 @@ document.querySelector("[alt='Gift Icon']").addEventListener("click", () => {
     showScreen(7); // Navigate to Screen 7
 });
 
-// Function to show the correct screen
-function showScreen(screenNumber) {
-    screens.forEach((screen, index) => {
-        screen.classList.toggle("active", index + 1 === screenNumber);
-        screen.classList.toggle("hidden", index + 1 !== screenNumber);
-    });
+// Handle "Continue" button click on screen 7
+document.getElementById('back-to-start-button').addEventListener('click', function () {
+    // Hide screen 7
+    document.getElementById('screen-7').classList.add('hidden');
 
-    progressSteps.forEach((step, index) => {
-        if (index + 1 < screenNumber) {
-            step.classList.add("bg-orange-500", "text-white");
-            step.classList.remove("bg-white", "text-orange-500");
-        } else if (index + 1 === screenNumber) {
-            step.classList.add("bg-orange-500", "text-white");
-            step.classList.remove("bg-white", "text-orange-500");
-        } else {
-            step.classList.add("bg-white", "text-orange-500");
-            step.classList.remove("bg-orange-500", "text-white");
-        }
-    });
-
-    currentScreen = screenNumber;
-}
+    // Show screen 1
+    document.getElementById('screen-1').classList.remove('hidden');
+});
