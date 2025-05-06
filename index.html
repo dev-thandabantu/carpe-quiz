@@ -70,51 +70,12 @@
             <div id="screens">
                 <!-- Screen 1 -->
                 <section id="screen-1" class="p-6 active text-center">
-                    <h2 class="font-bold text-xl text-gray-800">Which deodorant or antiperspirant brand do you currently
-                        use?</h2>
+                    <h2 class="font-bold text-xl text-gray-800">Which deodorant or antiperspirant brand do you currently use?</h2>
                     <p class="my-3">(select your favorite)</p>
-                    <div class="grid grid-cols-2 gap-4 mt-4">
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
-                            data-brand="Dove">
-                            <img src="./assets/images/dove.png" alt="Dove" class="w-[100px] h-[50px] mx-auto my-3" />
-                        </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
-                            data-brand="Old Spice">
-                            <img src="./assets/images/old-spice.png" alt="Old Spice"
-                                class="w-[100px] h-[50px] mx-auto my-3" />
-                        </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
-                            data-brand="Secret">
-                            <img src="./assets/images/secret.png" alt="Secret"
-                                class="w-[100px] h-[50px] mx-auto my-3" />
-                        </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
-                            data-brand="Degree">
-                            <img src="./assets/images/degree.png" alt="Degree"
-                                class="w-[100px] h-[50px] mx-auto my-3" />
-                        </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
-                            data-brand="Native">
-                            <img src="./assets/images/native.webp" alt="Native"
-                                class="w-[100px] h-[50px] mx-auto my-3" />
-                        </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
-                            data-brand="Axe">
-                            <img src="./assets/images/axe.jpeg" alt="Axe" class="w-[100px] h-[50px] mx-auto my-3" />
-                        </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
-                            data-brand="Lume">
-                            <img src="./assets/images/lume.png" alt="Lume" class="w-[100px] h-[50px] mx-auto my-3" />
-                        </div>
-                        <div class="text-center cursor-pointer border-2 border-transparent hover:border-orange-500 bg-white rounded-md"
-                            data-brand="Other">
-                            <img src="./assets/images/other.png" alt="Other" class="w-[100px] h-[50px] mx-auto my-3" />
-                        </div>
-                    </div>
+                    <div id="brand-grid" class="grid grid-cols-2 gap-4 mt-4"></div>
                     <div id="selected-brand-display" class="mt-4 text-center text-gray-800 font-bold hidden">
                         Selected Brand: <span id="selected-brand-name"></span>
                     </div>
-
                     <div class="mt-6">
                         <button id="continue-button"
                             class="bg-[#169bd9] text-white py-2 px-6 rounded-lg font-bold tracking-widest text-2xl"
@@ -124,48 +85,16 @@
                         </button>
                     </div>
                 </section>
-
+                
                 <!-- Screen 2 -->
                 <section id="screen-2" class="p-6 hidden">
-                    <h2 class="font-bold text-xl text-gray-800 text-center">What deodorant or antiperspirant products do
-                        you
-                        currently use?</h2>
-                    <div class="grid grid-cols-1 gap-4 mt-4">
-                        <div class="flex items-center gap-4 border-2 border-gray-200 rounded-lg p-4 bg-white">
-                            <input type="radio" name="product-type" value="Invisible Solid Stick"
-                                class="accent-blue-600" />
-                            <img src="./assets/images/products/invisible-solid.png" alt="Invisible Solid Stick"
-                                class="w-12 h-12 object-contain" />
-                            <div>
-                                <div class="font-bold">Invisible Solid Stick</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 border-2 border-gray-200 rounded-lg p-4 bg-white">
-                            <input type="radio" name="product-type" value="Invisible Cream" class="accent-blue-600" />
-                            <img src="./assets/images/products/invisible-solid.png" alt="Invisible Cream"
-                                class="w-12 h-12 object-contain" />
-                            <div>
-                                <div class="font-bold">Invisible Cream</div>
-                                <div class="italic text-gray-500 text-sm">(Whole Body)</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 border-2 border-gray-200 rounded-lg p-4 bg-white">
-                            <input type="radio" name="product-type" value="Dry Spray" class="accent-blue-600" />
-                            <img src="./assets/images/products/invisible-solid.png" alt="Dry Spray"
-                                class="w-12 h-12 object-contain" />
-                            <div>
-                                <div class="font-bold">Dry Spray</div>
-                            </div>
-                        </div>
-                    </div>
+                    <h2 class="font-bold text-xl text-gray-800 text-center">What deodorant or antiperspirant products do you currently use?</h2>
+                    <div id="product-list" class="grid grid-cols-1 gap-4 mt-4"></div>
                     <div class="flex items-center gap-2 mt-6">
-
-                        <!-- Back Button -->
                         <button id="back-button"
                             class="bg-[#07508b] text-white px-4 h-10 rounded-lg flex items-center justify-center">
                             <img src="./assets/images/back-forwad.svg" alt="Back Icon" class="w-4 h-4" />
                         </button>
-                        <!-- Next Button -->
                         <button id="next-button"
                             class="bg-[#169bd9] text-white py-2 w-full rounded-lg font-bold tracking-widest text-2xl flex items-center justify-center gap-2">
                             NEXT
