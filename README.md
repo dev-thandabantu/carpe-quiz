@@ -3,10 +3,10 @@
 ## Overview
 The Carpe Quiz is an interactive web application designed to engage users in a fun and informative quiz about deodorants and antiperspirants. The application guides users through a series of questions, collecting their preferences and providing personalized recommendations based on their responses.
 
-##Live Demo
+## Live Demo
 Vercel Link: https://carpe-quiz.vercel.app
 
-##Video Walkthrough
+## Video Walkthrough
 **YouTube (Unlisted):** [Watch the demo](https://youtu.be/v7aqnwqBPog)
 
 The video walks through the user interface, highlights key design decisions, and shares reflections on the development process and opportunities for further improvement.
